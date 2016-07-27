@@ -1,4 +1,3 @@
-//版权 北京智能社©, 保留所有权利
 //参数最小化原则
 function Sprite(oImg){
 	this.oImg = oImg;

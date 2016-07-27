@@ -1,4 +1,4 @@
-//版权 北京智能社©, 保留所有权利
+
 function Fish(imgs,type){
 	Sprite.call(this,imgs["fish"+type]);
 	

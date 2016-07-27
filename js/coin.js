@@ -1,4 +1,3 @@
-//版权 北京智能社©, 保留所有权利
 function Coin(imgs,type){
 	
 	//123 银币  45金币	
