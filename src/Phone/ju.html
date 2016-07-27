@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width user-scalable=no initial-scale=1"/>
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;list-style:none;text-decoration:none; font-style:normal;}
+html{font-size:32px;}
+#main{width:10rem;margin:0 auto;}
+#head{width:10rem;}
+#title{width:10rem;height:1.5625rem; background:-webkit-linear-gradient(#fff,#ebebeb); position:relative;}
+#title .btn_back{width:1.90625rem;height:0.90625rem; display:inline-block;text-indent:-99999999px; background:url(img/back.png) no-repeat; background-size:100% 100%; position:absolute;left:0.3125rem;top:0.3125rem;}
+#logo{width:2.3125rem;height:0.625rem;background:url(img/logo.png) no-repeat;background-size:100% 100%; position:absolute;left:3.8125rem;top:0.46875rem;}
+#banner{width:10rem;height:4.6875rem; position:relative;}
+#banner ul{width:99999999px;height:4.1875rem; position:absolute;left:0;top:0;overflow:hidden;}
+#banner ul li{width:10rem;height:100%;float:left;}
+#banner ul li img{width:100%;}
+#banner ol{position:absolute;left:50%;bottom:0;overflow:hidden;width:30%;margin-left:-0.78125rem;}
+#banner ol li{width:0.15625rem;height:0.15625rem;margin-right:0.15625rem;background:#a9a9a9;border-radius:50%;float:left;}
+#banner ol li.active{background:#ff4300;}
+#nav{overflow:hidden;width:10rem;}
+#nav dl{float:left;margin:0.46875rem 6%;}
+#nav .dl1 dt{width:1.25rem;height:1.25rem;border-radius:50%;background:url(img/icon1.png) no-repeat 0.3125rem 0.3125rem #ff3900;background-size:50% 50%;}
+#nav .dl2 dt{width:1.25rem;height:1.25rem;border-radius:50%;background:url(img/icon2.png) no-repeat 0.3125rem 0.3125rem #8bca11;background-size:50% 50%;}
+#nav .dl3 dt{width:1.25rem;height:1.25rem;border-radius:50%;background:url(img/icon3.png) no-repeat 0.3125rem 0.3125rem #000000;background-size:50% 50%;}
+#nav .dl4 dt{width:1.25rem;height:1.25rem;border-radius:50%;background:url(img/icon4.png) no-repeat 0.3125rem 0.3125rem #ff529d;background-size:50% 50%;}
+#nav dl dd{color:#999;font:0.375rem/0.75rem "微软雅黑";text-align:center;}
+.top{width:10rem;margin:0 0.3125rem;}
+.top .top_nav{width:100%;overflow:hidden;}
+.top .top_nav em{width:0.0625rem;height:0.46875rem;background:#d51938;float:left;}
+.top .top_nav .p1{float:left;color:#333;font:0.375rem/0.46875rem "微软雅黑";margin-left:0.3125rem;}
+.top .top_nav .p2{float:right;color:#333;font:0.375rem/0.46875rem "微软雅黑";}
+.top .top_nav .border{height:0.0625rem;background:#dcdcdc;margin:0.625rem 0 0.3125rem 0;}
+.top .content{ display:-webkit-box; margin-bottom:0.3125rem;}
+.top .content div{height:1.875rem;}
+.top .content .top1{width:0.9375rem;text-align:center;color:#fff;background:#e00202;font:bold 0.5rem/1.875rem "微软雅黑";}
+.top .content .top2{width:0.9375rem;text-align:center;color:#fff;background:#ff4800;font:bold 0.5rem/1.875rem "微软雅黑";}
+.top .content .top3{width:0.9375rem;text-align:center;color:#fff;background:#ff7300;font:bold 0.5rem/1.875rem "微软雅黑";}
+.top .content .top4{width:0.9375rem;text-align:center;color:#fff;background:#ff9d00;font:bold 0.5rem/1.875rem "微软雅黑";}
+.top .content .div_img{width:2.8125rem;}
+.top .content .div_img img{width:100%;}
+.top .content .desc{-webkit-box-flex:1; position:relative; background:#f4f4f4;}
+.top .content .desc em{ display:inline-block;color:#999;margin-left:0.3125rem;font-size:0.375rem;}
+.top .content .desc span{display:block;color:#999;font-size:0.375rem}
+.top .content .desc span em{display:inline-block;color:#999;margin-left:0.3125rem;margin-top:0.15625rem; text-decoration:line-through;font-size:0.375rem}
+.top .content .desc span i{color:#c7223d;font-weight:bold;margin-left:0.3125rem;font-size:0.375rem}
+.top .content .desc strong{color:#d9475a;font:700 0.5rem/0.5rem "微软雅黑"; position:absolute;right:10%;top:30%;}
+.top .content .desc b{width:0.21875rem;height:0.34375rem; position:absolute;top:35%;right:5%; background:url(img/next.png) no-repeat;background-size:100% 100%;}
+.top .top_title{width:100%;height:1.25rem;background:#f5f5f5;color:#666;text-align:center;line-height:1.25rem;font-size:0.4375rem}
+.more{width:10rem;margin:0.3125rem;}
+.more .more_content{width:100%;height:5.5rem;display:-webkit-box;}
+.more .more_content .mc_left{width:2.34375rem;}
+.more .more_content .mc_left img{width:100%;}
+.more .more_content .mc_right{-webkit-box-flex:1;;overflow:hidden;border-bottom:0.03125rem solid #f5f5f5;height:5.5rem;}
+.more .more_content .mc_right li{width:32.9%;height:25%;float:left;border-right:0.03125rem solid #f5f5f5;border-top:0.03125rem solid #f5f5f5;text-align:center;line-height:1.34375rem;color:#999;font-size:0.4375rem}
+.more .more_content .mc_right li.active{color:#d51942;}
+.more .more_title{width:100%;height:1.25rem;background:#f5f5f5;color:#666;text-align:center;line-height:1.25rem;margin-top:0.3125rem; position:relative;font-size:0.4375rem}
+.more .more_title b{width:0.21875rem;height:0.34375rem; position:absolute;top:35%;right:5%; background:url(img/next.png) no-repeat;background-size:100% 100%;}
+</style>
+<script>
+window.onresize = function(){
+	
+	/*
+	    标准字体大小     新的字体？
+		----------- =  -----------
+		标准设备的宽度   新的设备的宽度
+	
+	*/
+	
+	document.documentElement.style.fontSize = 32/320*document.documentElement.clientWidth + "px";
+	
+		
+};
+</script>
+</head>
+
+<body>
+<div id="main">
+	<div id="head">
+    	<div id="title">
+        	<a href="javascript:;" class="btn_back">返回</a>
+            <h1 id="logo"></h1>
+        </div>
+        <div id="banner">
+        	<ul>
+            	<li><img src="img/banner.png" alt="banner"/></li>
+            </ul>
+            <ol>
+            	<li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="active"></li>
+            </ol>
+        </div>
+    </div>
+    <div id="nav">
+    	<dl class="dl1">
+        	<dt></dt>
+            <dd>商品</dd>
+        </dl>
+        <dl class="dl2">
+        	<dt></dt>
+            <dd>生活</dd>
+        </dl>
+        <dl class="dl3">
+        	<dt></dt>
+            <dd>品牌</dd>
+        </dl>
+        <dl class="dl4">
+        	<dt></dt>
+            <dd>聚宝盆</dd>
+        </dl>
+        <dl class="dl1">
+        	<dt></dt>
+            <dd>商品</dd>
+        </dl>
+        <dl class="dl2">
+        	<dt></dt>
+            <dd>生活</dd>
+        </dl>
+        <dl class="dl3">
+        	<dt></dt>
+            <dd>品牌</dd>
+        </dl>
+        <dl class="dl4">
+        	<dt></dt>
+            <dd>聚宝盆</dd>
+        </dl>
+    </div>
+    <div class="top">
+    	<div class="top_nav">
+        	<em></em>
+            <p class="p1">聚划算热卖排行</p>
+            <p class="p2">TOP10</p>
+            <div class="border"></div>
+        </div>
+        <div class="content">
+        	<div class="top1">1</div>
+            <div class="div_img"><img src="img/top1.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top2">2</div>
+            <div class="div_img"><img src="img/top2.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top3">3</div>
+            <div class="div_img"><img src="img/top3.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">4</div>
+            <div class="div_img"><img src="img/top4.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">5</div>
+            <div class="div_img"><img src="img/top5.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">6</div>
+            <div class="div_img"><img src="img/top6.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">7</div>
+            <div class="div_img"><img src="img/top7.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">8</div>
+            <div class="div_img"><img src="img/top8.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">9</div>
+            <div class="div_img"><img src="img/top9.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="content">
+        	<div class="top4">10</div>
+            <div class="div_img"><img src="img/top10.png"/></div>
+            <div class="desc">
+            	<em>已售68423</em>
+                <span><i>2.3</i>折<em>￥299</em></span>
+                <strong>￥51</strong>
+                <b></b>
+            </div>
+        </div>
+        <div class="top_title">更多划算 逛起来！</div>
+    </div>
+    <div class="more">
+        <div class="more_content">
+        	<div class="mc_left"><img src="img/left1.png"/></div>
+            <ul class="mc_right">
+           		<li class="active">服饰</li>
+                <li>配饰</li>
+                <li>美妆</li>
+                <li>鞋包</li>
+                <li>食品</li>
+                <li class="active">家居</li>
+                <li>运动</li>
+                <li class="active">电器</li>
+                <li>百货</li>
+                <li>母婴</li>
+                <li>数码</li>
+                <li>更多</li>
+            </ul>
+        </div>
+        <div class="more_title">精彩商品 逛起来！<b></b></div>
+    </div>
+     <div class="more">
+        <div class="more_content">
+        	<div class="mc_left"><img src="img/left2.png"/></div>
+            <ul class="mc_right">
+           		<li class="active">服饰</li>
+                <li>配饰</li>
+                <li>美妆</li>
+                <li>鞋包</li>
+                <li>食品</li>
+                <li class="active">家居</li>
+                <li>运动</li>
+                <li class="active">电器</li>
+                <li>百货</li>
+                <li>母婴</li>
+                <li>数码</li>
+                <li>更多</li>
+            </ul>
+        </div>
+        <div class="more_title">精彩商品 逛起来！<b></b></div>
+    </div>
+     <div class="more">
+        <div class="more_content">
+        	<div class="mc_left"><img src="img/left3.png"/></div>
+            <ul class="mc_right">
+           		<li class="active">服饰</li>
+                <li>配饰</li>
+                <li>美妆</li>
+                <li>鞋包</li>
+                <li>食品</li>
+                <li class="active">家居</li>
+                <li>运动</li>
+                <li class="active">电器</li>
+                <li>百货</li>
+                <li>母婴</li>
+                <li>数码</li>
+                <li>更多</li>
+            </ul>
+        </div>
+        <div class="more_title">精彩商品 逛起来！<b></b></div>
+    </div>
+</div>
+</body>
+</html>

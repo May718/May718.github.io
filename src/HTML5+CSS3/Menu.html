@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;text-decoration:none;}
+@keyframes test{
+from{top:0;}
+to{top:-100px}	
+}
+
+body{background:#ccc;}
+#box{width:880px;margin:100px auto;overflow:hidden;}
+#box div{width:200px;height:100px;float:left;overflow:hidden;position:relative;}
+#box .a1{background:url(1.jpg) 0 5px no-repeat;width:200px;height:100px; position:absolute;left:0;top:0;display:block;}
+#box .a2{background:url(1.jpg) -200px 5px no-repeat;width:200px;height:100px; position:absolute;left:0;top:0;display:block;}
+#box .a3{background:url(1.jpg) -400px 5px no-repeat;width:200px;height:100px; position:absolute;left:0;top:0;display:block;}
+#box .a4{background:url(1.jpg) -600px 5px no-repeat;width:200px;height:100px; position:absolute;left:0;top:0;display:block;}
+#box div em{width:200px;height:100px;font:30px/100px Verdana;text-align:center;background:#999;color:#fff;text-shadow:2px 1px 4px #000;display:block; position:absolute;left:0;top:0;-webkit-transition:.3s all linear;-moz-transition:.3s all linear;-ms-transition:.3s all linear;-o-transition:.3s all linear;}
+#box div span{width:200px;height:100px; position:absolute;background:url(window.png) repeat-x;left:0;top:0;}
+#box div:hover em{-webkit-transform:translate(0,-100px);-moz-transform:translate(0,-100px);-ms-transform:translate(0,-100px);-o-transform:translate(0,-100px);
+-webkit-transition:.5s all linear;-moz-transition:.5s all linear;-ms-transition:.5s all linear;-o-transition:.5s all linear;}
+</style>
+</head>
+
+<body>
+<div id="box">
+	<div>
+    	<a href="javascript:;" class="a1"></a>
+        <em>About</em>
+        <span></span>
+    </div>
+    <div>
+    	<a href="javascript:;" class="a2"></a>
+        <em>Content</em>
+        <span></span>
+    </div>
+
+	<div>
+    	<a href="javascript:;" class="a3"></a>
+        <em>User</em>
+        <span></span>
+    </div>
+
+	<div>
+    	<a href="javascript:;" class="a4"></a>
+        <em>Contact</em>
+        <span></span>
+    </div>
+
+</div>
+</body>
+</html>

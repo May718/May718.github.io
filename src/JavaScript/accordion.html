@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* {margin:0; padding:0; list-style:none;}
+
+#div1 {width:940px; height:305px; border:1px solid black; margin:10px auto; position:relative; overflow:hidden;}
+#div1 span {width:20px; height:305px; display:block; position:absolute; left:0; top:0;}
+#div1 div {width:840px; height:305; position:absolute; left:0; top:0; background:#CCC; transition:1s all ease;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div1');
+	var aDiv=oDiv.children;
+	var aSpan=oDiv.getElementsByTagName('span');
+	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].style.left=i*20+'px';
+		(function(index){
+			aDiv[i].onmouseover=function(){
+				for(var i=0;i<aDiv.length;i++){
+					if(i<=index){//i是里面循环的
+						//alert(i);
+						//aDiv[i].style.left=i*20+'px';
+						aDiv[i].style.left=i*aSpan[i].offsetWidth+'px';
+						//move(aDiv[i],{left:i*20});
+					}else if(i>index){
+						//aDiv[i].style.left=840+(i-1)*20+'px';
+						aDiv[i].style.left=aDiv[i].offsetWidth+(i-1)*aSpan[i].offsetWidth+'px';
+						//move(aDiv[i],{left:840+(i-1)*20});
+					}
+				}
+			}
+		})(i);//i是外面循环的
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<div class="active"><img src="images/0.jpg" /><span style="background:#C00;">第一项</span></div>
+	<div><img src="images/1.jpg" /><span style="background:#0fc;">第二项</span></div>
+	<div><img src="images/2.jpg" /><span style="background:#af0;">第三项</span></div>
+	<div><img src="images/3.jpg" /><span style="background:#c0f;">第四项</span></div>
+	<div><img src="images/0.jpg" /><span style="background:#e0f;">第五项</span></div>
+	<div><img src="images/1.jpg" /><span style="background:#a90;">第六项</span></div>
+</div>
+</body>
+</html>

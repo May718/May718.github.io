@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+ul{ width:302px; height:302px; margin:100px auto; position:relative;}
+ul li{ width:300px; height:300px; background:#399; border:1px solid #000; text-align:center; line-height:300px; font-size:30px; font-weight:bold; font-family:微软雅黑; color:#fff; opacity:0; position:absolute; -webkit-transition:1s all ease;-moz-transition:1s all ease;-ms-transition:1s all ease;-o-transition:1s all ease;}
+
+.l2{opacity:0; z-index:3; 
+-webkit-transform: perspective(800px) translate(-250px,0) rotateY(45deg) ;
+-moz-transform: perspective(800px) translate(-250px,0) rotateY(45deg) ;
+-ms-transform: perspective(800px) translate(-250px,0) rotateY(45deg) ;
+-o-transform: perspective(800px) translate(-250px,0) rotateY(45deg) ;
+}
+.l1{opacity:1; z-index:4;
+ -webkit-transform: perspective(800px) translate(-200px,0) rotateY(45deg) ;
+ -moz-transform: perspective(800px) translate(-200px,0) rotateY(45deg) ;
+ -ms-transform: perspective(800px) translate(-200px,0) rotateY(45deg) ;
+ -o-transform: perspective(800px) translate(-200px,0) rotateY(45deg) ;
+}
+.cur{opacity:1; z-index:5;}
+.r1{opacity:1; z-index:4; -webkit-transform: perspective(800px) translate(200px,0) rotateY(-45deg) ;
+ -moz-transform: perspective(800px) translate(200px,0) rotateY(-45deg) ;
+ -ms-transform: perspective(800px) translate(200px,0) rotateY(-45deg) ;
+ -o-transform: perspective(800px) translate(200px,0) rotateY(-45deg) ;
+}
+.r2{opacity:0; z-index:3; 
+-webkit-transform: perspective(800px) translate(250px,0) rotateY(-45deg) ;
+-moz-transform: perspective(800px) translate(250px,0) rotateY(-45deg) ;
+-ms-transform: perspective(800px) translate(250px,0) rotateY(-45deg) ;
+-o-transform: perspective(800px) translate(250px,0) rotateY(-45deg) ;}
+</style>
+<script>
+window.onload=function(){
+	var oPrev = document.getElementById('prev');
+	var oNext = document.getElementById('next');
+	var aLi = document.querySelectorAll('ul li');
+	var aClass = [];
+	var bOk = false;
+	for(var i=0;i<aLi.length;i++){
+		aClass[i] = aLi[i].className;
+	}
+	oPrev.onclick=function(){
+		if(bOk)return;
+		bOk = true;
+		aClass.push(aClass.shift());
+		tab();
+	};
+	oNext.onclick=function(){
+		if(bOk)return;
+		bOk = true;
+		aClass.unshift(aClass.pop());
+		tab();
+	};
+	function tab(){
+		var oCur = document.querySelector('.cur');
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].className = aClass[i];
+		}
+		function tranEnd(){
+			oCur.removeEventListener('transitionend',tranEnd,false);
+			bOk = false;
+		}
+		oCur.addEventListener('transitionend',tranEnd,false);
+	}
+};
+</script>
+</head>
+
+<body>
+<a href="javascript:;" id="prev">←</a>
+<a href="javascript:;" id="next">→</a>
+<ul>
+	<li class="cur">1</li>
+	<li class="r1">2</li>
+	<li class="r2">3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+	<li class="l2">11</li>
+	<li class="l1">12</li>
+</ul>
+只用chrome内核示例
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

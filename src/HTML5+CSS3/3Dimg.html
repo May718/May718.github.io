@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+*{margin:0; padding:0; list-style:none;}
+body{background:#000; overflow:hidden;}
+ul{width:133px; height:200px; margin:200px auto; position:relative; -webkit-transform-style:preserve-3d;
+-moz-transform-style:preserve-3d;-ms-transform-style:preserve-3d;-o-transform-style:preserve-3d;
+-webkit-transform:perspective(800px) rotateX(0) rotateY(0);
+-moz-transform:perspective(800px) rotateX(0) rotateY(0);
+-ms-transform:perspective(800px) rotateX(0) rotateY(0);
+-o-transform:perspective(800px) rotateX(0) rotateY(0);
+}
+ul li{width:133px; height:200px; position:absolute; top:0; left:0; 
+-webkit-transform: rotateY(0deg) translateZ(0px); 
+-moz-transform: rotateY(0deg) translateZ(0px);
+-ms-transform: rotateY(0deg) translateZ(0px);
+-o-transform: rotateY(0deg) translateZ(0px);
+border-radius:15px; overflow:hidden; box-shadow:0px 0px 20px #fff;}
+</style>
+<script>
+function getStyle(obj,sName){
+	return (obj.currentStyle||getComputedStyle(obj,false))[sName];
+}
+window.onload=function(){
+	var oUl = document.querySelector('ul');
+	var aLi = document.querySelectorAll('ul li');
+	var bOk = false;
+	for(var i=0;i<aLi.length;i++){
+		if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!==-1){
+			aLi[i].style.MozTransition = '1s all ease '+(11-i)*100+'ms';
+			aLi[i].style.MozTransform = 'rotateY('+i*360/11+'deg) translateZ(350px)';
+		}else if(window.navigator.userAgent.toLowerCase().indexOf('msie')!==-1){
+			aLi[i].style.msTransition = '1s all ease '+(11-i)*100+'ms';
+			aLi[i].style.msTransform = 'rotateY('+i*360/11+'deg) translateZ(350px)';
+		}else{
+			aLi[i].style.WebkitTransition = '1s all ease '+(11-i)*100+'ms';
+			aLi[i].style.WebkitTransform = 'rotateY('+i*360/11+'deg) translateZ(350px)';
+		}
+	}
+	function tranEnd(){
+		aLi[0].removeEventListener('transitionend',tranEnd,false);
+		bOk = true;
+	}
+	aLi[0].addEventListener('transitionend',tranEnd,false);
+	var x = 0;
+	var y = 0;
+	var iSpeedX = 0;
+	var iSpeedY = 0;
+	var lastX = 0;
+	var lastY = 0;
+	var timer = null;
+	oUl.onmousedown=function(ev){
+		if(!bOk)return;
+		clearInterval(timer);
+		var disX = ev.pageX-y;
+		var disY = ev.pageY-x;
+		document.onmousemove=function(ev){
+			x = ev.pageY-disY;
+			y = ev.pageX-disX;
+			if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!==-1){
+				oUl.style.MozTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}else if(window.navigator.userAgent.toLowerCase().indexOf('msie')!==-1){
+				oUl.style.msTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}else{
+				oUl.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}
+			iSpeedX = ev.pageX-lastX;
+			iSpeedY = ev.pageY-lastY;
+			
+			lastX = ev.pageX;
+			lastY = ev.pageY;
+		};
+		document.onmouseup=function(){
+			document.onmousemove=null;
+			document.onmouseup=null;
+			clearInterval(timer);
+			timer = setInterval(function(){
+				iSpeedX*=0.95;
+				iSpeedY*=0.95;
+				x += iSpeedY;
+				y += iSpeedX;
+				if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!==-1){
+				oUl.style.MozTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}else if(window.navigator.userAgent.toLowerCase().indexOf('msie')!==-1){
+				oUl.style.msTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}else{
+				oUl.style.WebkitTransform = 'perspective(800px) rotateX('+-x/5+'deg) rotateY('+y/5+'deg)';
+			}
+				
+				if(Math.abs(iSpeedX)<1)iSpeedX=0;
+				if(Math.abs(iSpeedY)<1)iSpeedY=0;
+				if(iSpeedX==0&&iSpeedY==0){
+					clearInterval(timer);
+				}
+			},30);
+		};
+		return false;
+	};
+	
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li><img src="img2/1.jpg" /></li>
+	<li><img src="img2/2.jpg" /></li>
+	<li><img src="img2/3.jpg" /></li>
+	<li><img src="img2/4.jpg" /></li>
+	<li><img src="img2/5.jpg" /></li>
+	<li><img src="img2/6.jpg" /></li>
+	<li><img src="img2/7.jpg" /></li>
+	<li><img src="img2/8.jpg" /></li>
+	<li><img src="img2/9.jpg" /></li>
+	<li><img src="img2/10.jpg" /></li>
+	<li><img src="img2/11.jpg" /></li>
+</ul>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
